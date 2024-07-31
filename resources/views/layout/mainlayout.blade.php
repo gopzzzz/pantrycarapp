@@ -7,10 +7,10 @@
 </head>
 
 <body class="">
+@include('layout.partials.header')
 
 @include('layout.partials.nav')
 
-  @include('layout.partials.header')
 
   @yield('content')
 

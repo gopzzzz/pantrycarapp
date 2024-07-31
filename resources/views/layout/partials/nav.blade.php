@@ -32,13 +32,20 @@
 					    <a href="index.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
 					</li>
 					<li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Page layouts</span></a>
+					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Category</span></a>
 					    <ul class="pcoded-submenu">
-					        <li><a href="layout-vertical.html" target="_blank">Vertical</a></li>
-					        <li><a href="layout-horizontal.html" target="_blank">Horizontal</a></li>
+					        <li><a href="categoryinsert" target="_blank"> Add Category</a></li>
+					        <li><a href="categorylist" target="_blank">Category List</a></li>
 					    </ul>
 					</li>
-					<li class="nav-item pcoded-menu-caption">
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Product</span></a>
+					    <ul class="pcoded-submenu">
+					        <li><a href="productinsert" target="_blank">Add Product</a></li>
+					        <li><a href="productlist" target="_blank">Product List</a></li>
+					    </ul>
+					</li>
+					<!-- <li class="nav-item pcoded-menu-caption">
 						<label>UI Element</label>
 					</li>
 					<li class="nav-item pcoded-hasmenu">
@@ -93,8 +100,8 @@
 					<li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
 
 				</ul>
-				
-				<div class="card text-center">
+				 -->
+				<!-- <div class="card text-center">
 					<div class="card-block">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 						<i class="feather icon-sunset f-40"></i>
@@ -103,7 +110,7 @@
 						<a href="https://1.envato.market/PgJNQ" target="_blank" class="btn btn-primary btn-sm text-white m-0">Upgrade</a>
 					</div>
 				</div>
-				
+				 -->
 			</div>
 		</div>
 	</nav>
