@@ -35,6 +35,8 @@ Route::post('/productimageinsert', [App\Http\Controllers\ProductController::clas
 Route::post('/productimagefetch', [App\Http\Controllers\ProductController::class, 'productimagefetch'])->name('productimagefetch');
 Route::post('/productimagedelete', [App\Http\Controllers\ProductController::class, 'productimagedelete'])->name('productimagedelete');
 
+Route::get('/enquirylist', [App\Http\Controllers\EnquiryController::class, 'enquirylist'])->name('enquirylist');
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
