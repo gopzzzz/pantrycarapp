@@ -28,6 +28,8 @@ Route::get('/daylist', [App\Http\Controllers\DaysController::class, 'daylist'])-
 Route::post('/dayfetch', [App\Http\Controllers\DaysController::class, 'dayfetch'])->name('dayfetch');
 
 
+Route::get('/enquirylist', [App\Http\Controllers\EnquiryController::class, 'enquirylist'])->name('enquirylist');
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
