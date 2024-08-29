@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Flat Able - Premium Admin Template by Phoenixcoded</title>
+	<title>PANTRYCAR ADMIN  | Login </title>
 	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 11]>
@@ -18,7 +18,7 @@
 	<meta name="keywords" content="">
 	<meta name="author" content="Phoenixcoded" />
 	<!-- Favicon icon -->
-	<link rel="icon" href="{{asset('assets/images/favicon.ico')}}" type="image/x-icon">
+	<!-- <link rel="icon" href="{{asset('assets/images/favicon.ico')}}" type="image/x-icon"> -->
 
 	<!-- vendor css -->
 	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -31,7 +31,7 @@
 <!-- [ auth-signin ] start -->
 <div class="auth-wrapper">
 	<div class="auth-content text-center">
-		<img src="{{asset('assets/images/logo.png')}}" alt="" class="img-fluid mb-4">
+	<h4 style="color:white;">PANTRYCAR ADMIN </h4>
 		<div class="card borderless">
 			<div class="row align-items-center ">
 				<div class="col-md-12">
