@@ -10,8 +10,13 @@ use App\Models\Plan_details;
 class PlanDetailsController extends Controller
 {
    public function plandetails(){
-    $plandetails=DB::table('plan_details')->orderby('plan_details.id','desc')->get();
-    return view('admin.plandetails',compact('plandetails'));
+    $plan=DB::table('tbl_master_plans')->get();
+    $plandetails=DB::table('plan_details')
+    ->leftjoin('tbl_master_plans', 'plan_details.plan_id', '=', 'tbl_master_plans.id')
+    ->orderby('plan_details.id','desc')
+    ->select('plan_details.*', 'tbl_master_plans.name as master_plan_name')
+    ->get();
+    return view('admin.plandetails',compact('plandetails','plan'));
    }
    public function plandetailsinsert(Request $request)
    {
@@ -21,15 +26,19 @@ class PlanDetailsController extends Controller
         'breakfast' => 'required',
         'lunch' => 'required',
         'dinner' => 'required',
+        'total_days' => 'required',
+
 
     ]);
     
        $plandetails = new Plan_details;
-       $plandetails->name = $request->plan_name;
+    //  $plandetails->name = 0;
+       $plandetails->plan_id= $request->plan_name;
        $plandetails->description = $request->description;
        $plandetails->breakfast= $request->breakfast;
        $plandetails->lunch= $request->lunch; 
        $plandetails->dinner = $request->dinner;
+       $plandetails->total_days = $request->total_days;
        $plandetails->save();
        return redirect('plandetails')->with('success','Plan Details Added Successfully');
    }
@@ -46,16 +55,20 @@ class PlanDetailsController extends Controller
         'breakfast' => 'required',
         'lunch' => 'required',
         'dinner' => 'required',
+        'total_days' => 'required',
+
 
     ]);
        
        $id=$request->id;
        $plandetails=Plan_details::find($id);
-       $plandetails->name = $request->plan_name;
+    //    $plandetails->name = $request->plan_name;
+       $plandetails->plan_id= $request->plan_name;
        $plandetails->description = $request->description;
        $plandetails->breakfast= $request->breakfast;
        $plandetails->lunch= $request->lunch; 
        $plandetails->dinner = $request->dinner;
+       $plandetails->total_days = $request->total_days;
        $plandetails->save();
        return redirect('plandetails')->with('success','Plan Details Edited Successfully');
 

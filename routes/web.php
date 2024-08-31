@@ -31,6 +31,11 @@ Route::post('/daysfetch', [App\Http\Controllers\DaysController::class, 'daysfetc
 Route::post('/daysinsert', [App\Http\Controllers\DaysController::class, 'daysinsert'])->name('daysinsert');
 Route::post('/daysedit', [App\Http\Controllers\DaysController::class, 'daysedit'])->name('daysedit');
 
+Route::get('/master_plans', [App\Http\Controllers\MasterplanController::class, 'master_plans'])->name('master_plans');
+Route::post('/masterplansfetch', [App\Http\Controllers\MasterplanController::class, 'masterplansfetch'])->name('masterplansfetch');
+Route::post('/masterplaninsert', [App\Http\Controllers\MasterplanController::class, 'masterplaninsert'])->name('masterplaninsert');
+Route::post('/masterplansedit', [App\Http\Controllers\MasterplanController::class, 'masterplansedit'])->name('masterplansedit');
+
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'customer'])->name('customer');
 Route::post('/customerfetch', [App\Http\Controllers\CustomerController::class, 'customerfetch'])->name('customerfetch');
 Route::post('/customeredit', [App\Http\Controllers\CustomerController::class, 'customeredit'])->name('customeredit');

@@ -43,7 +43,8 @@
 						
 					
 					</li>
-				
+					<li class="nav-item pcoded-hasmenu">
+					<a href="master_plans" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Master Plans</span></a>
 					
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="enquirylist" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Enquirys</span></a>
