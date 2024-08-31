@@ -254,7 +254,7 @@
           $.ajax({
     					type: "POST",
     
-    					url: "{{ route('daysfetch') }}",
+    					url: "{{ route('masterplansfetch') }}",
     					data: {  "_token": "{{ csrf_token() }}",
     					id: id },
     					success: function (res) {
