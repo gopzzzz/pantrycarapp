@@ -343,7 +343,7 @@
     					console.log(res);
               var obj=JSON.parse(res)
     		  $('#plandetailsid').val(obj.id);
-              $('#plan_name').val(obj.plan_id);
+              $('#plan_name').val(obj.masterplan_id);
               $('#description').val(obj.description);
               $('#breakfast').val(obj.breakfast);
               $('#lunch').val(obj.lunch);
