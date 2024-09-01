@@ -46,6 +46,9 @@ Route::post('/plandetailsfetch', [App\Http\Controllers\PlanDetailsController::cl
 Route::post('/plandetailsedit', [App\Http\Controllers\PlanDetailsController::class, 'plandetailsedit'])->name('plandetailsedit');
 Route::post('/plandetailsinsert', [App\Http\Controllers\PlanDetailsController::class, 'plandetailsinsert'])->name('plandetailsinsert');
 
+Route::get('/b2csales', [App\Http\Controllers\B2cController::class, 'b2csales'])->name('b2csales');
+Route::post('/b2csalesinsert', [App\Http\Controllers\B2cController::class, 'b2csalesinsert'])->name('b2csalesinsert');
+
 Route::get('/enquirylist', [App\Http\Controllers\EnquiryController::class, 'enquirylist'])->name('enquirylist');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

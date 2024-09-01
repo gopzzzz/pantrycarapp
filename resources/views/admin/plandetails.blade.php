@@ -87,10 +87,7 @@
 
 </div>
 <div class="modal-body row">
-<!-- <div class="form-group col-sm-6">
-<label class="exampleModalLabel">Plan Name</label>
-<input class="form-control" name="plan_name" placeholder="Enter Plan Name" required>
-</div> -->
+
 <div class="form-group col-sm-6">
 <label class="exampleModalLabel">Plan Name</label>
 <select name="plan_name" class="form-control" required>                      

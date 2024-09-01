@@ -67,6 +67,13 @@
 					        <li><a href="productlist" target="_blank">Product List</a></li>
 					    </ul> -->
 					</li>
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="b2csales" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">B2c Sales</span></a>
+					    <!-- <ul class="pcoded-submenu">
+					        <li><a href="productinsert" target="_blank">Add Product</a></li>
+					        <li><a href="productlist" target="_blank">Product List</a></li>
+					    </ul> -->
+					</li>
 					<!-- <li class="nav-item pcoded-menu-caption">
 						<label>UI Element</label>
 					</li>
