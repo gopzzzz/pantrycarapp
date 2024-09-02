@@ -14,7 +14,7 @@ class DaysController extends Controller
     return view('admin.daylist',compact('daylist'));
    }
    public function day(){
-      $days=DB::table('days')->orderby('days.id','desc')->get();
+      $days=DB::table('days')->orderby('days.id','asc')->get();
       return view('admin.day',compact('days'));
      }
      public function daysinsert(Request $request)

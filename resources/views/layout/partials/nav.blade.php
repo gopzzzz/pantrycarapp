@@ -34,24 +34,18 @@
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Masters</span></a>
 					    <ul class="pcoded-submenu">
-					        <li><a href="daylist" >Add Days</a></li>
+					      
 							<li><a href="day">Days</a></li>
 
 
-					        <!-- <li><a href="categorylist" >Category List</a></li> -->
+					        <li><a href="menu" >Menus</a></li>
 					    </ul>
 						
 					
 					</li>
 				
 					
-					<li class="nav-item pcoded-hasmenu">
-					    <a href="enquirylist" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Enquirys</span></a>
-					    <!-- <ul class="pcoded-submenu">
-					        <li><a href="productinsert" target="_blank">Add Product</a></li>
-					        <li><a href="productlist" target="_blank">Product List</a></li>
-					    </ul> -->
-					</li>
+				
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="customer" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Customers</span></a>
 					    <!-- <ul class="pcoded-submenu">
@@ -65,6 +59,14 @@
 					        <li><a href="productinsert" target="_blank">Add Product</a></li>
 					        <li><a href="productlist" target="_blank">Product List</a></li>
 					    </ul> -->
+					</li>
+
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext"> Mess Sales</span></a>
+					    <ul class="pcoded-submenu">
+					        <li><a href="b2csales">B2C</a></li>
+					        <!-- <li><a href="productlist" target="_blank">Product List</a></li> -->
+					    </ul>
 					</li>
 					<!-- <li class="nav-item pcoded-menu-caption">
 						<label>UI Element</label>

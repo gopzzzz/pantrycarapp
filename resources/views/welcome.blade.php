@@ -20,6 +20,73 @@
         <!-- [ breadcrumb ] end -->
         <!-- [ Main Content ] start -->
         <div class="row">
+
+        @foreach($meals as $singleMeals)
+
+        <div class="col-md-12 col-xl-4">
+        <div class="col-sm-12">{{$singleMeals->meals}}</div>
+                <div class="card flat-card">
+             
+                    <div class="row-table">
+                       
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                            <div class="col-sm-4">
+                                    <i class="icon feather icon-mail text-c-yellow mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>10k</h5>
+                                    <span>TOTAL SILVER </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                            <div class="col-sm-4">
+                                    <i class="icon feather icon-mail text-c-yellow mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>100%</h5>
+                                    <span>TOTAL GOLD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-table">
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                            <div class="col-sm-4">
+                                    <i class="icon feather icon-mail text-c-yellow mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>2000 +</h5>
+                                    <span>TOTAL VEG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- widget primary card start -->
+                <div class="card flat-card widget-primary-card">
+                    <div class="row-table">
+                        <div class="col-sm-3 card-body">
+                            <i class="feather icon-star-on"></i>
+                        </div>
+                        <div class="col-sm-9">
+                            <h4>4000 +</h4>
+                            <h6>TOTAL {{$singleMeals->meals}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- widget primary card end -->
+            </div>
+
+            @endforeach
             <!-- table card-1 start -->
             
             <!-- table card-1 end -->

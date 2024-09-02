@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -23,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $meals=DB::table('meals')->get();
+        return view('welcome',compact('meals'));
     }
  
 }
