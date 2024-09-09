@@ -155,8 +155,8 @@
                                                 <td>{{$key->name}}</td>
                                                 <td>{{$key->customer_code}}</td>
                                                 <td>{{$key->contact_number}}</td>
-                                                <td>{{$key->home_location}}</td>
-                                                <td>{{$key->office_location}}</td>
+                                                <td><a href="{{$key->home_location}}" target="_blank">map</a></td>
+                                                <td><a href="{{$key->office_location}}" target="_blank">map</a></td>
                                                 <td>@if($key->status==0) ACTIVE @elseif($key->status==1) INACTIVE @endif</td>
                                                <td> <i class="fa fa-edit edit_customer" aria-hidden="true" data-toggle="modal" data-id="{{ $key->id }}"></i>
 

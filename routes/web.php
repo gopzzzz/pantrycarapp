@@ -31,6 +31,11 @@ Route::post('/daysfetch', [App\Http\Controllers\DaysController::class, 'daysfetc
 Route::post('/daysinsert', [App\Http\Controllers\DaysController::class, 'daysinsert'])->name('daysinsert');
 Route::post('/daysedit', [App\Http\Controllers\DaysController::class, 'daysedit'])->name('daysedit');
 
+Route::get('/master_plans', [App\Http\Controllers\MasterplanController::class, 'master_plans'])->name('master_plans');
+Route::post('/masterplansfetch', [App\Http\Controllers\MasterplanController::class, 'masterplansfetch'])->name('masterplansfetch');
+Route::post('/masterplaninsert', [App\Http\Controllers\MasterplanController::class, 'masterplaninsert'])->name('masterplaninsert');
+Route::post('/masterplansedit', [App\Http\Controllers\MasterplanController::class, 'masterplansedit'])->name('masterplansedit');
+
 Route::get('/customer', [App\Http\Controllers\CustomerController::class, 'customer'])->name('customer');
 Route::post('/customerfetch', [App\Http\Controllers\CustomerController::class, 'customerfetch'])->name('customerfetch');
 Route::post('/customeredit', [App\Http\Controllers\CustomerController::class, 'customeredit'])->name('customeredit');
@@ -44,6 +49,9 @@ Route::post('/plandetailsinsert', [App\Http\Controllers\PlanDetailsController::c
 Route::get('/b2csales', [App\Http\Controllers\Messb2csalesController::class, 'b2csales'])->name('b2csales');
 Route::get('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');
 
+
+Route::get('/b2csales', [App\Http\Controllers\B2cController::class, 'b2csales'])->name('b2csales');
+Route::post('/b2csalesinsert', [App\Http\Controllers\B2cController::class, 'b2csalesinsert'])->name('b2csalesinsert');
 
 Route::get('/enquirylist', [App\Http\Controllers\EnquiryController::class, 'enquirylist'])->name('enquirylist');
 

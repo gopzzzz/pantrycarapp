@@ -21,11 +21,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Plan Details</h5>
+                            <h5 class="m-b-10">Master Plans</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Plan Details</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Master Plans</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,22 +34,11 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
         
-
-
-
-
             @if(session('success'))
-
-
 
             <h3 style="margin-left: 19px;color: green;">{{session('success')}}</h3> @endif
 
-
-
             <!-- Main content -->
-
-
-
             <section class="content">
 
 <div class="container-fluid">
@@ -68,18 +57,18 @@
 
           <p align="right">
 
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Add Plan Details</button>
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Add Master Plan</button>
 
                                
 
                                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                        <form method="POST"  id="form1" action="{{ route('plandetailsinsert') }}" enctype="multipart/form-data">
+                                        <form method="POST"  id="form1" action="{{ route('masterplaninsert') }}" enctype="multipart/form-data">
 @csrf
 <div class="modal-dialog" role="document" style="width:80%;">
 <div class="modal-content">
 <div class="modal-header">
-<h5 class="modal-title" id="exampleModalLabel">Add Plan Details</h5>
+<h5 class="modal-title" id="exampleModalLabel">Add Master Plan</h5>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 
@@ -87,34 +76,11 @@
 
 </div>
 <div class="modal-body row">
+<div class="form-group col-sm-12">
+<label class="exampleModalLabel">Master Plan Name</label>
+<input class="form-control" name="master_plan_name" placeholder="Enter Master Plan Name" required>
+</div>
 
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Plan Name</label>
-<select name="plan_name" class="form-control" required>                      
-	<option value="" disabled selected>Select Plan Name</option>                        
-                    @foreach($plan as $key)
-                        <option value="{{ $key->id }}">{{ $key->name }}</option>
-                    @endforeach
-                </select>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Description</label>
-<textarea class="form-control" name="description" placeholder="Enter Description Price" required></textarea>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Breakfast Price</label>
-<input type="number" class="form-control" name="breakfast" placeholder="Enter Breakfast Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Lunch Price</label>
-<input  type="number" class="form-control" name="lunch" placeholder="Enter Lunch Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Dinner Price</label>
-<input  type="number" class="form-control" name="dinner" placeholder="Enter Dinner Price" required>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Total Days</label>
-<input  type="number" class="form-control" name="total_days" placeholder="Enter Total Days" required>
-</div>
  </div>
 
 <div class="modal-footer">
@@ -142,28 +108,17 @@
 
                                             <tr>
                                                 <th>ID</th>
-                                                <th>PLAN NAME </th>
-                                                <th>DESCRIPTION</th>
-                                                <th>BREAKFAST PRICE</th>
-                                                <th>LUNCH PRICE</th>
-                                                <th>DINNER PRICE </th>
-                                                <th>TOTAL DAYS </th>
+                                                <th>MASTER PLAN NAME </th>
 
                                                 <th>ACTION</th>
-
                                             </tr>
                                         </thead>
-                                        <tbody>@php $i=1; @endphp @foreach($plandetails as $key)
+                                        <tbody>@php $i=1; @endphp @foreach($plans as $key)
                                             <tr>
                                                 <td>{{$i}}</td>
-                                                <td>{{$key->master_plan_name}}</td>
-                                                <td>{{$key->description}}</td>
-                                                <td>{{$key->breakfast}}</td>
-                                                <td>{{$key->lunch}}</td>
-                                                <td>{{$key->dinner}}</td>
-                                                <td>{{$key->total_days}}</td>
-
-                                               <td> <i class="fa fa-edit edit_plandetails" aria-hidden="true" data-toggle="modal" data-id="{{ $key->id }}"></i>
+                                                <td>{{$key->name}}</td>
+                                                
+                                               <td> <i class="fa fa-edit edit_masterplans" aria-hidden="true" data-toggle="modal" data-id="{{ $key->id }}"></i>
 
                                                 </td>
 
@@ -171,71 +126,37 @@
                                         <tfoot>
                                             <tr>
                                             <th>ID</th>
-                                                <th>PLAN NAME </th>
-                                                <th>DESCRIPTION</th>
-                                                <th>BREAKFAST PRICE</th>
-                                                <th>LUNCH PRICE</th>
-                                                <th>DINNER PRICE </th>
-                                                <th>TOTAL DAYS </th>
+                                            <th>MASTER PLAN NAME </th>
+
 
                                                 <th>ACTION</th>
 
                                             </tr>
                                         </tfoot>
                                     </table>
-                                    <div class="modal" id="editplandetails_modal" tabindex="-1" role="dialog">
+                                    <div class="modal" id="editmasterplans_modal" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Edit Plan Details</h5>
+                                                    <h5 class="modal-title">Edit Master Plan Details</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form method="POST" action="{{url('plandetailsedit')}}" enctype="multipart/form-data">
+                                                <form method="POST" action="{{url('masterplansedit')}}" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="modal-body row">
-                                                            <input type="hidden" name="id" id="plandetailsid">
-                                                            <!-- <div class="form-group col-sm-6">
-<label class="exampleModalLabel">Plan Name</label>
-<input class="form-control" name="plan_name" id="plan_name" placeholder="Enter Plan Name" required>
-</div> -->
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Plan Name</label>
-<select name="plan_name" id="plan_name" class="form-control" required>                      
-	<option value="" disabled selected>Select Plan Name</option>                        
-                    @foreach($plan as $key)
-                        <option value="{{ $key->id }}">{{ $key->name }}</option>
-                    @endforeach
-                </select>
+                                                            <input type="hidden" name="id" id="masterid">
+
+                                                            <div class="form-group col-sm-12">
+<label class="exampleModalLabel">Master Plan Name</label>
+<input class="form-control" name="master_plan_name" id="master_plan_name" placeholder="Enter Master Plan Name" required>
 </div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Description</label>
-<textarea class="form-control" name="description" id="description" placeholder="Enter Description" required></textarea>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Breakfast Price</label>
-<input  type="number" class="form-control" name="breakfast" id="breakfast" placeholder="Enter Breakfast Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Lunch Price</label>
-<input  type="number" class="form-control" name="lunch" id="lunch" placeholder="Enter Lunch Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Dinner Price</label>
-<input  type="number" class="form-control" name="dinner" id="dinner" placeholder="Enter Dinner Price" required>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Total Days</label>
-<input  type="number" class="form-control" name="total_days" id="total_days" placeholder="Enter Total Days" required>
-</div>
-                                                        
 
                                                         </div>
 
-                                                    <div class="modal-footer">
-
-
-
-                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+   <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Save changes</button>
 
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
@@ -326,31 +247,27 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    $('.edit_plandetails').click(function(){
+    $('.edit_masterplans').click(function(){
     		var id=$(this).data('id');
     	
     		if(id){
           $.ajax({
     					type: "POST",
     
-    					url: "{{ route('plandetailsfetch') }}",
+    					url: "{{ route('masterplansfetch') }}",
     					data: {  "_token": "{{ csrf_token() }}",
     					id: id },
     					success: function (res) {
     					console.log(res);
               var obj=JSON.parse(res)
-    		  $('#plandetailsid').val(obj.id);
-              $('#plan_name').val(obj.masterplan_id);
-              $('#description').val(obj.description);
-              $('#breakfast').val(obj.breakfast);
-              $('#lunch').val(obj.lunch);
-              $('#dinner').val(obj.dinner);
-              $('#total_days').val(obj.total_days);
-
+    		  $('#masterid').val(obj.id);
+              $('#master_plan_name').val(obj.name);
+           
+             
     					},
     					});	 
     		}
-    		$('#editplandetails_modal').modal('show');
+    		$('#editmasterplans_modal').modal('show');
     	});
 </script>
 

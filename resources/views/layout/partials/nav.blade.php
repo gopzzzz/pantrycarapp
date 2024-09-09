@@ -45,6 +45,9 @@
 					</li>
 				
 					
+					<li class="nav-item pcoded-hasmenu">
+					<a href="master_plans" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Master Plans</span></a>
+					
 				
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="customer" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Customers</span></a>
@@ -60,12 +63,12 @@
 					        <li><a href="productlist" target="_blank">Product List</a></li>
 					    </ul> -->
 					</li>
-
+				
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext"> Mess Sales</span></a>
 					    <ul class="pcoded-submenu">
 					        <li><a href="b2csales">B2C</a></li>
-					        <!-- <li><a href="productlist" target="_blank">Product List</a></li> -->
+					     
 					    </ul>
 					</li>
 					<!-- <li class="nav-item pcoded-menu-caption">
