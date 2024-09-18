@@ -11,8 +11,8 @@
 #category_name {
     width: 100%; /* Ensure the input field takes up the appropriate space */
 }
-</style>
-<div class="pcoded-main-container">
+
+    </style><div class="pcoded-main-container">
     <div class="pcoded-content">
         <!-- [ breadcrumb ] start -->
         <div class="page-header">
@@ -41,7 +41,9 @@
 
 
 
-            <h3 style="margin-left: 19px;color: green;">{{session('success')}}</h3> @endif
+            <h3 style="margin-left: 19px;color: green;">{{session('success')}}</h3> @else
+            <h3 style="margin-left: 19px;color: red;">{{session('error')}}</h3>
+            @endif
 
 
 
@@ -100,49 +102,54 @@
                                                                 <label class="exampleModalLabel">Sale Date</label>
                                                                 <input type="date" class="form-control" name="sale_date" placeholder="Enter Sale Date" required>
                                                             </div>
-                                                            <div class="form-group col-sm-6">
+                                                            <div class="form-group col-sm-12">
                                                                 <label class="exampleModalLabel">Plan Name</label>
-                                                                <select name="plan_name" class="form-control seletcplan" required>
-                                                                    <option value="" disabled selected>Select Plan Name</option>
+                                                                <select name="plan_name" class="form-control selectplan" required>
+                                                                    <option value="0"  selected>Select Plan Name</option>
                                                                     @foreach($plan as $key)
-                                                                    <option value="{{ $key->id }}">{{ $key->name }} - {{$key->total_days}} Days</option>
+                                                                    <option value="{{ $key->id }}">{{ $key->name }} ({{$key->number_of_meals}} Meals) - {{$key->total_days}} Days</option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="exampleModalLabel">Number of Days</label>
-                                                                <input type="number" id="numdays" class="form-control" name="number_of_days" placeholder="Enter Number of Days" required>
-                                                            </div>
+                                                          
                                                             <br>
                                                             <div class="form-group col-sm-12">
                                                                 <label class="exampleModalLabel">Meals Type</label>
                                                                 <div class="d-flex flex-wrap">
                                                                     <div class="form-check mr-3">
-                                                                        <input class="form-check-input" type="checkbox" name="meals_type[]" value="BREAKFAST">
+                                                                        <input class="form-check-input" type="checkbox" name="meals_type[]" value="1">
                                                                         <label class="form-check-label">BREAKFAST</label>
                                                                     </div>
                                                                     <div class="form-check mr-3">
-                                                                        <input class="form-check-input" type="checkbox" name="meals_type[]" value="LUNCH">
+                                                                        <input class="form-check-input" type="checkbox" name="meals_type[]" value="2">
                                                                         <label class="form-check-label">LUNCH</label>
                                                                     </div>
                                                                     <div class="form-check mr-3">
-                                                                        <input class="form-check-input" type="checkbox" name="meals_type[]" value="DINNER">
+                                                                        <input class="form-check-input" type="checkbox" name="meals_type[]" value="3">
                                                                         <label class="form-check-label">DINNER</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <br>
 
                                                             <div class="form-group col-sm-6">
-                                                                <label class="exampleModalLabel">Sale Amount</label>
-                                                                <input type="number" class="form-control" name="sale_amount" placeholder="Enter Sale Amount" required>
+                                                                <label class="exampleModalLabel">Number of Days</label>
+                                                                <input type="hidden" id="amount" class="form-control" name="amount" >
+                                                                <input type="hidden" id="nomeals" class="form-control" name="nomeals" >
+                                                                <input type="number" id="numdays" class="form-control nodays" name="number_of_days" placeholder="Enter Number of Days" required >
                                                             </div>
-                                                            <div class="form-group col-sm-6">
-                                                                <label class="exampleModalLabel">Tax Amount</label>
-                                                                <input type="number" class="form-control" name="tax_amount" placeholder="Enter Tax Amount" required>
-                                                            </div>
+
+
+
+                                                          
                                                             <div class="form-group col-sm-6">
                                                                 <label class="exampleModalLabel">Total Amount</label>
-                                                                <input type="number" class="form-control" name="total_amount" placeholder="Enter Total Amount" required>
+                                                                <input type="number" class="form-control" name="total_amount" id="total_amount" placeholder="Enter Total Amount" required readonly>
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                               <br>
+                                                                <input type="checkbox"  name="satandsun" id="satandsun" value="1"  >Include Saturday and Sunday
                                                             </div>
 
                                                         </div>
@@ -176,8 +183,7 @@
                                                 <th>INVOICE NUMBER</th>
                                                 <th>SALE DATE</th>
                                                 <th>PLAN NAME</th>
-                                                <th>SALE AMOUNT</th>
-                                                <th>TAX AMOUNT</th>
+                                               
                                                 <th>TOTAL AMOUNT</th>
                                                 <th>NUMBER OF DAYS</th>
 
@@ -191,8 +197,7 @@
                                                 <td>{{$key->invoice_number}}</td>
                                                 <td>{{$key->sale_date}}</td>
                                                 <td>{{$key->master_plan_name}}</td>
-                                                <td>{{$key->sale_amount}}</td>
-                                                <td>{{$key->tax_amount}}</td>
+                                               
                                                 <td>{{$key->total_amount}}</td>
                                                 <td>{{$key->number_of_days}}</td>
 
@@ -206,8 +211,7 @@
                                                 <th>INVOICE NUMBER</th>
                                                 <th>SALE DATE</th>
                                                 <th>PLAN NAME</th>
-                                                <th>SALE AMOUNT</th>
-                                                <th>TAX AMOUNT</th>
+                                               
                                                 <th>TOTAL AMOUNT</th>
                                                 <th>NUMBER OF DAYS</th>
 
@@ -265,7 +269,6 @@
 </div>
 
 
-
 <!-- /.container-fluid -->
 
 
@@ -280,6 +283,79 @@
 
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $('.selectplan').on('change',function(){
+        
+        $('input[name="meals_type"]').prop('checked', false);
+    		var id=$(this).val();
+           // alert(id);
+    	
+    		if(id){
+          $.ajax({
+    					type: "POST",
+    
+    					url: "{{ route('plandetailsfetch') }}",
+    					data: {  "_token": "{{ csrf_token() }}",
+    					id: id },
+    					success: function (res) {
+    					console.log(res);
+              var obj=JSON.parse(res)
+    		  $('#numdays').val(obj.total_days);
+              $('#nomeals').val(obj.number_of_meals);
+              $('#amount').val(obj.amount);
+
+              var TotalSum = Math.round(parseInt(obj.number_of_meals || 0) * parseFloat(obj.amount || 0)) * parseInt(obj.total_days || 0);
+
+
+              $('#total_amount').val(TotalSum);
+           
+             
+    					},
+    					});	 
+    		}
+    		$('#editmasterplans_modal').modal('show');
+    	});
+
+        $('input[name="meals_type"]').on('click', function() {
+
+// Get the number of allowed meals from the #numdays input field and convert it to an integer
+var numdays = parseInt($('#numdays').val());
+var nomeals = parseInt($('#nomeals').val());
+
+
+
+if (numdays) {
+
+   
+    // Count how many checkboxes are checked
+    var checkedCount = $('input[name="meals_type"]:checked').length;
+
+    // If more than the allowed number of checkboxes are selected, uncheck the current one
+    if (checkedCount > nomeals) {
+        alert("You can only select a maximum of " + nomeals + " meals.");
+        $(this).prop('checked', false);
+    }
+} else {
+    // Alert the user to select a plan if #numdays is not set
+    alert("Please select a plan.");
+    $(this).prop('checked', false);
+}
+});
+
+$('.nodays').on('keyup',function(){
+
+    var value = $(this).val();
+    var nomeals=$('#nomeals').val();
+    var amount=$('#amount').val();
+    var TotalSum = Math.round(parseInt(nomeals || 0) * parseFloat(amount || 0)) * parseInt(value || 0);
+    $('#total_amount').val(TotalSum);
+
+});
+
+
+       
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -312,3 +388,4 @@
             });
         });
 </script>
+@endif @endsection

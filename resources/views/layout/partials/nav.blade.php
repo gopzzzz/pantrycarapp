@@ -9,7 +9,7 @@
 				
 				<div class="">
 					<div class="main-menu-header">
-						<img class="img-radius" src="assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
+						<img class="img-radius" src="{{asset('assets/images/user/avatar-2.jpg')}}" alt="User-Profile-Image">
 						<div class="user-details">
 							<span>admin</span>
 							<!-- <div id="more-details">UX Designer<i class="fa fa-chevron-down m-l-5"></i></div> -->
@@ -46,7 +46,15 @@
 				
 					
 					<li class="nav-item pcoded-hasmenu">
-					<a href="master_plans" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Master Plans</span></a>
+					<a href="master_plans" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Master Plans</span></a></i>
+
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="plandetails" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Plan Details</span></a>
+					    <!-- <ul class="pcoded-submenu">
+					        <li><a href="productinsert" target="_blank">Add Product</a></li>
+					        <li><a href="productlist" target="_blank">Product List</a></li>
+					    </ul> -->
+					</li>
 					
 				
 					<li class="nav-item pcoded-hasmenu">
@@ -56,13 +64,7 @@
 					        <li><a href="productlist" target="_blank">Product List</a></li>
 					    </ul> -->
 					</li>
-					<li class="nav-item pcoded-hasmenu">
-					    <a href="plandetails" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Plan Details</span></a>
-					    <!-- <ul class="pcoded-submenu">
-					        <li><a href="productinsert" target="_blank">Add Product</a></li>
-					        <li><a href="productlist" target="_blank">Product List</a></li>
-					    </ul> -->
-					</li>
+				
 				
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext"> Mess Sales</span></a>
@@ -70,6 +72,13 @@
 					        <li><a href="b2csales">B2C</a></li>
 					     
 					    </ul>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="cancellation" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Cancellation</span></a>
+					    <!-- <ul class="pcoded-submenu">
+					        <li><a href="productinsert" target="_blank">Add Product</a></li>
+					        <li><a href="productlist" target="_blank">Product List</a></li>
+					    </ul> -->
 					</li>
 					<!-- <li class="nav-item pcoded-menu-caption">
 						<label>UI Element</label>

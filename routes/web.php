@@ -24,6 +24,9 @@ Route::get('/', function () {
     return redirect(route('login'));
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/customerList/{id}', [App\Http\Controllers\HomeController::class, 'customerList'])->name('customerList');
+Route::get('/cancellation', [App\Http\Controllers\HomeController::class, 'cancellation'])->name('cancellation');
+Route::post('/cancelfoodmeals', [App\Http\Controllers\HomeController::class, 'cancelfoodmeals'])->name('cancelfoodmeals');
 Route::get('/daylist', [App\Http\Controllers\DaysController::class, 'daylist'])->name('daylist');
 Route::get('/day', [App\Http\Controllers\DaysController::class, 'day'])->name('day');
 

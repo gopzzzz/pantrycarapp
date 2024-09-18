@@ -23,10 +23,10 @@ class PlanDetailsController extends Controller
     $validatedData = $request->validate([
         'plan_name' => 'required',            
         'description' => 'required',
-        'breakfast' => 'required',
-        'lunch' => 'required',
-        'dinner' => 'required',
+        'amount' => 'required',
+       
         'total_days' => 'required',
+        'nomeals'=>'required',
 
 
     ]);
@@ -34,10 +34,10 @@ class PlanDetailsController extends Controller
        $plandetails = new Plan_details;
        $plandetails->masterplan_id= $request->plan_name;
        $plandetails->description = $request->description;
-       $plandetails->breakfast= $request->breakfast;
-       $plandetails->lunch= $request->lunch; 
-       $plandetails->dinner = $request->dinner;
+       $plandetails->amount= $request->amount;
+     
        $plandetails->total_days = $request->total_days;
+       $plandetails->number_of_meals=$request->nomeals;
        $plandetails->save();
        return redirect('plandetails')->with('success','Plan Details Added Successfully');
    }
@@ -51,9 +51,7 @@ class PlanDetailsController extends Controller
     $validatedData = $request->validate([
         'plan_name' => 'required',            
         'description' => 'required',
-        'breakfast' => 'required',
-        'lunch' => 'required',
-        'dinner' => 'required',
+        'amount' => 'required',
         'total_days' => 'required',
 
 
@@ -63,9 +61,8 @@ class PlanDetailsController extends Controller
        $plandetails=Plan_details::find($id);
        $plandetails->masterplan_id= $request->plan_name;
        $plandetails->description = $request->description;
-       $plandetails->breakfast= $request->breakfast;
-       $plandetails->lunch= $request->lunch; 
-       $plandetails->dinner = $request->dinner;
+       $plandetails->amount= $request->amount;
+      
        $plandetails->total_days = $request->total_days;
        $plandetails->save();
        return redirect('plandetails')->with('success','Plan Details Edited Successfully');

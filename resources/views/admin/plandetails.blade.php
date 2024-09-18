@@ -11,11 +11,10 @@
 #category_name {
     width: 100%; /* Ensure the input field takes up the appropriate space */
 }
-
-    </style>
+</style>
 <div class="pcoded-main-container">
     <div class="pcoded-content">
-        <!-- [ breadcrumb ] start --> 
+        <!-- [ breadcrumb ] start -->
         <div class="page-header">
             <div class="page-block">
                 <div class="row align-items-center">
@@ -33,7 +32,7 @@
         </div>
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-        
+
 
 
 
@@ -52,87 +51,85 @@
 
             <section class="content">
 
-<div class="container-fluid">
+                <div class="container-fluid">
 
-  <div class="row">
+                    <div class="row">
 
-    <div class="col-12">
+                        <div class="col-12">
 
-      <!-- /.card -->
+                            <!-- /.card -->
 
-<div class="card">
+                            <div class="card">
 
-        <div class="card-header">
+                                <div class="card-header">
 
-          <h3 class="card-title"></h3>
+                                    <h3 class="card-title"></h3>
 
-          <p align="right">
+                                    <p align="right">
 
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Add Plan Details</button>
+                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Add Plan Details</button>
 
-                               
+
 
                                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                        <form method="POST"  id="form1" action="{{ route('plandetailsinsert') }}" enctype="multipart/form-data">
-@csrf
-<div class="modal-dialog" role="document" style="width:80%;">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="exampleModalLabel">Add Plan Details</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
+                                            <form method="POST" id="form1" action="{{ route('plandetailsinsert') }}" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="modal-dialog" role="document" style="width:80%;">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Add Plan Details</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
 
-</button>
+                                                            </button>
 
-</div>
-<div class="modal-body row">
+                                                        </div>
+                                                        <div class="modal-body row">
 
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Plan Name</label>
-<select name="plan_name" class="form-control" required>                      
-	<option value="" disabled selected>Select Plan Name</option>                        
-                    @foreach($plan as $key)
-                        <option value="{{ $key->id }}">{{ $key->name }}</option>
-                    @endforeach
-                </select>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Description</label>
-<textarea class="form-control" name="description" placeholder="Enter Description Price" required></textarea>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Breakfast Price</label>
-<input type="number" class="form-control" name="breakfast" placeholder="Enter Breakfast Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Lunch Price</label>
-<input  type="number" class="form-control" name="lunch" placeholder="Enter Lunch Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Dinner Price</label>
-<input  type="number" class="form-control" name="dinner" placeholder="Enter Dinner Price" required>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Total Days</label>
-<input  type="number" class="form-control" name="total_days" placeholder="Enter Total Days" required>
-</div>
- </div>
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="exampleModalLabel">Plan Name</label>
+                                                                <select name="plan_name" class="form-control" required>
+                                                                    <option value="" disabled selected>Select Plan Name</option>
+                                                                    @foreach($plan as $key)
+                                                                    <option value="{{ $key->id }}">{{ $key->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="exampleModalLabel">Description</label>
+                                                                <textarea class="form-control" name="description" placeholder="Enter Description Price" required></textarea>
+                                                            </div>
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="exampleModalLabel">Number of meals</label>
+                                                                <input type="text" class="form-control" name="nomeals" placeholder="Enter Number of meals" required>
+                                                            </div>
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="exampleModalLabel"> Price / Meals</label>
+                                                                <input type="text" class="form-control" name="amount" placeholder="Enter  Price" required>
+                                                            </div>
+                                                            <div class="form-group col-sm-6">
+                                                                <label class="exampleModalLabel">Total Days</label>
+                                                                <input type="number" class="form-control" name="total_days" placeholder="Enter Total Days" required>
+                                                            </div>
+                                                        </div>
 
-<div class="modal-footer">
+                                                        <div class="modal-footer">
 
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-<button type="submit" class="btn btn-primary form1-submit">Add</button>
+                                                            <button type="submit" class="btn btn-primary form1-submit">Add</button>
 
-</div>
-</div>
+                                                        </div>
+                                                    </div>
 
-</div>
+                                                </div>
 
-</form>
-</div>
-                </p>
+                                            </form>
+                                        </div>
+                                    </p>
 
-                </div>
+                                </div>
                                 <div class="card-body">
 
                                     <table id="example1" class="table table-bordered table-striped">
@@ -143,10 +140,10 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>PLAN NAME </th>
+                                                <th> MEALS / DAY </th>
                                                 <th>DESCRIPTION</th>
-                                                <th>BREAKFAST PRICE</th>
-                                                <th>LUNCH PRICE</th>
-                                                <th>DINNER PRICE </th>
+                                                <th> PRICE</th>
+
                                                 <th>TOTAL DAYS </th>
 
                                                 <th>ACTION</th>
@@ -157,25 +154,25 @@
                                             <tr>
                                                 <td>{{$i}}</td>
                                                 <td>{{$key->master_plan_name}}</td>
+                                                <td>{{$key->number_of_meals}}</td>
                                                 <td>{{$key->description}}</td>
-                                                <td>{{$key->breakfast}}</td>
-                                                <td>{{$key->lunch}}</td>
-                                                <td>{{$key->dinner}}</td>
+                                                <td>{{$key->amount}}</td>
+
                                                 <td>{{$key->total_days}}</td>
 
-                                               <td> <i class="fa fa-edit edit_plandetails" aria-hidden="true" data-toggle="modal" data-id="{{ $key->id }}"></i>
+                                                <td> <i class="fa fa-edit edit_plandetails" aria-hidden="true" data-toggle="modal" data-id="{{ $key->id }}"></i>
 
                                                 </td>
 
                                             </tr>@php $i++; @endphp @endforeach</tbody>
                                         <tfoot>
                                             <tr>
-                                            <th>ID</th>
+                                                <th>ID</th>
                                                 <th>PLAN NAME </th>
+                                                <th> MEALS / DAY </th>
                                                 <th>DESCRIPTION</th>
-                                                <th>BREAKFAST PRICE</th>
-                                                <th>LUNCH PRICE</th>
-                                                <th>DINNER PRICE </th>
+                                                <th> PRICE</th>
+
                                                 <th>TOTAL DAYS </th>
 
                                                 <th>ACTION</th>
@@ -195,41 +192,37 @@
                                                 <form method="POST" action="{{url('plandetailsedit')}}" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="modal-body row">
-                                                            <input type="hidden" name="id" id="plandetailsid">
-                                                            <!-- <div class="form-group col-sm-6">
+                                                        <input type="hidden" name="id" id="plandetailsid">
+                                                        <!-- <div class="form-group col-sm-6">
 <label class="exampleModalLabel">Plan Name</label>
 <input class="form-control" name="plan_name" id="plan_name" placeholder="Enter Plan Name" required>
 </div> -->
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Plan Name</label>
-<select name="plan_name" id="plan_name" class="form-control" required>                      
-	<option value="" disabled selected>Select Plan Name</option>                        
-                    @foreach($plan as $key)
-                        <option value="{{ $key->id }}">{{ $key->name }}</option>
-                    @endforeach
-                </select>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Description</label>
-<textarea class="form-control" name="description" id="description" placeholder="Enter Description" required></textarea>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Breakfast Price</label>
-<input  type="number" class="form-control" name="breakfast" id="breakfast" placeholder="Enter Breakfast Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Lunch Price</label>
-<input  type="number" class="form-control" name="lunch" id="lunch" placeholder="Enter Lunch Price" required>
-</div><div class="form-group col-sm-6">
-<label class="exampleModalLabel">Dinner Price</label>
-<input  type="number" class="form-control" name="dinner" id="dinner" placeholder="Enter Dinner Price" required>
-</div>
-<div class="form-group col-sm-6">
-<label class="exampleModalLabel">Total Days</label>
-<input  type="number" class="form-control" name="total_days" id="total_days" placeholder="Enter Total Days" required>
-</div>
-                                                        
-
+                                                        <div class="form-group col-sm-6">
+                                                            <label class="exampleModalLabel">Plan Name</label>
+                                                            <select name="plan_name" id="plan_name" class="form-control" required>
+                                                                <option value="" disabled selected>Select Plan Name</option>
+                                                                @foreach($plan as $key)
+                                                                <option value="{{ $key->id }}">{{ $key->name }}</option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label class="exampleModalLabel">Description</label>
+                                                            <textarea class="form-control" name="description" id="description" placeholder="Enter Description Price" required></textarea>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label class="exampleModalLabel">Number of meals</label>
+                                                            <input type="text" class="form-control" name="nomeals" id="nomeals" placeholder="Enter Number of meals" required>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label class="exampleModalLabel"> Price / Meals</label>
+                                                            <input type="text" class="form-control" name="amount" id="amount" placeholder="Enter  Price" required>
+                                                        </div>
+                                                        <div class="form-group col-sm-6">
+                                                            <label class="exampleModalLabel">Total Days</label>
+                                                            <input type="number" class="form-control" name="total_days" id="totaldays" placeholder="Enter Total Days" required>
+                                                        </div>
+                                                    </div>
 
                                                     <div class="modal-footer">
 
@@ -342,10 +335,10 @@
     		  $('#plandetailsid').val(obj.id);
               $('#plan_name').val(obj.masterplan_id);
               $('#description').val(obj.description);
-              $('#breakfast').val(obj.breakfast);
-              $('#lunch').val(obj.lunch);
-              $('#dinner').val(obj.dinner);
-              $('#total_days').val(obj.total_days);
+              $('#nomeals').val(obj.number_of_meals);
+              $('#amount').val(obj.amount);
+             
+              $('#totaldays').val(obj.total_days);
 
     					},
     					});	 
