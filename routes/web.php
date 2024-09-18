@@ -44,6 +44,22 @@ Route::post('/customerfetch', [App\Http\Controllers\CustomerController::class, '
 Route::post('/customeredit', [App\Http\Controllers\CustomerController::class, 'customeredit'])->name('customeredit');
 Route::post('/customerinsert', [App\Http\Controllers\CustomerController::class, 'customerinsert'])->name('customerinsert');
 
+Route::get('/delivery_agent', [App\Http\Controllers\DeliveryagentController::class, 'delivery_agent'])->name('delivery_agent');
+Route::post('/delivery_agentfetch', [App\Http\Controllers\DeliveryagentController::class, 'delivery_agentfetch'])->name('delivery_agentfetch');
+Route::post('/delivery_agentedit', [App\Http\Controllers\DeliveryagentController::class, 'delivery_agentedit'])->name('delivery_agentedit');
+Route::post('/delivery_agentinsert', [App\Http\Controllers\DeliveryagentController::class, 'delivery_agentinsert'])->name('delivery_agentinsert');
+Route::get('/delivery_agentdelete/{id}', [App\Http\Controllers\DeliveryagentController::class, 'delivery_agentdelete'])->name('delivery_agentdelete');
+
+Route::get('/account_head', [App\Http\Controllers\AccountheadController::class, 'account_head'])->name('account_head');
+Route::post('/account_headfetch', [App\Http\Controllers\AccountheadController::class, 'account_headfetch'])->name('account_headfetch');
+Route::post('/account_headedit', [App\Http\Controllers\AccountheadController::class, 'account_headedit'])->name('account_headedit');
+Route::post('/account_headinsert', [App\Http\Controllers\AccountheadController::class, 'account_headinsert'])->name('account_headinsert');
+Route::get('/account_headdelete/{id}', [App\Http\Controllers\AccountheadController::class, 'account_headdelete'])->name('account_headdelete');
+
+Route::get('/transaction', [App\Http\Controllers\TransactionController::class, 'transaction'])->name('transaction');
+Route::post('/transactioninsert', [App\Http\Controllers\TransactionController::class, 'transactioninsert'])->name('transactioninsert');
+Route::get('/transactiondelete/{id}', [App\Http\Controllers\TransactionController::class, 'transactiondelete'])->name('transactiondelete');
+
 Route::get('/plandetails', [App\Http\Controllers\PlanDetailsController::class, 'plandetails'])->name('plandetails');
 Route::post('/plandetailsfetch', [App\Http\Controllers\PlanDetailsController::class, 'plandetailsfetch'])->name('plandetailsfetch');
 Route::post('/plandetailsedit', [App\Http\Controllers\PlanDetailsController::class, 'plandetailsedit'])->name('plandetailsedit');

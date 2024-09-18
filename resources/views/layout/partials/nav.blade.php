@@ -80,6 +80,21 @@
 					        <li><a href="productlist" target="_blank">Product List</a></li>
 					    </ul> -->
 					</li>
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Account</span></a>
+					    <ul class="pcoded-submenu">
+					        <li><a href="account_head">Account Head</a></li>
+							<li><a href="transaction">Transactions</a></li>
+
+					    </ul>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="#" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Delivery</span></a>
+					    <ul class="pcoded-submenu">
+					        <li><a href="delivery_agent">Delivery Agents</a></li>
+					     
+					    </ul>
+					</li>
 					<!-- <li class="nav-item pcoded-menu-caption">
 						<label>UI Element</label>
 					</li>
